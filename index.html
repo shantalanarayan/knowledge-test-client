@@ -27,12 +27,55 @@
   <div id="message" class="alert alert-warning text-left col-12" role="alert">temporary test message</div>
   <!-- end of display message -->
 
-  <div id="non-auth-area"> <!-- start of non-authenticated-area -->
-Sign-in & Sign-Up
+  <div id="non-auth-area">
+    <!-- start of non-authenticated-area -->
+
+            <form id='sign-in'>
+              <fieldset class="form-group col-md-6">
+                <div class="form-group">
+                  <input name="credentials[email]" type='email' placeholder="Email" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <input name="credentials[password]" type='password' placeholder="Password" class="form-control" />
+                </div>
+                <input type='submit' value='Sign In' class="btn btn-primary" />
+              </fieldset>
+            </form>
+<br />
+            <!-- Form for sign-up content of nav tabs -->
+            <form id='sign-up'>
+              <fieldset class="form-group col-md-6">
+                <div class="form-group md-6">
+                  <input name="credentials[email]" type='email' placeholder="Email" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <input name="credentials[password]" type='password' placeholder="Password" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <input name="credentials[password_confirmation]" type='password' placeholder="Password Confirmation" class="form-control" />
+                </div>
+                <input type='submit' value='Sign Up' class="btn btn-primary" />
+              </fieldset>
+            </form>
   </div> <!-- end of non-authenticated-area -->
 
-  <div id="auth-area"> <!-- start of non-authenticated-area -->
-Sign-out & change-password
+  <div id="auth-area">
+    <!-- start of non-authenticated-area -->
+      <input id="sign-out" type="submit" value="Sign out!" class="btn btn-primary float-right" />
+
+    <br />
+    <form id="change-password" class="mt-5">
+        <fieldset class="form-group col-md-6">
+          <legend class="col-form-label text-primary">Change Password!</legend>
+          <div class="form-group">
+            <input name="passwords[old]" type='password' placeholder="Old Password" class="form-control" />
+          </div>
+          <div class="form-group">
+            <input name="passwords[new]" type='password' placeholder="New Password" class="form-control" />
+          </div>
+          <input type='submit' value='Change Password!' class="btn btn-primary" />
+        </fieldset>
+      </form>
   </div> <!-- end of non-authenticated-area -->
 </body>
 

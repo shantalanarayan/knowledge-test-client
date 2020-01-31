@@ -3,6 +3,7 @@
 const store = require('../store')
 
 const toggleForm = () => {
+  console.log('toggleForm', store)
   if (store.user) {
     // User is logged in
     $('#auth-area').show()
