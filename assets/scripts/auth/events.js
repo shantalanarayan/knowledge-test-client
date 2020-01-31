@@ -16,7 +16,6 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-
   const data = getFormFields(this)
   api.signIn(data)
     .then(cb.signInSuccess)
@@ -25,7 +24,6 @@ const onSignIn = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-
   api.signOut()
     .then(cb.signOutSuccess)
     .catch(cb.signOutFailure)
@@ -33,7 +31,6 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-
   const data = getFormFields(this)
   api.changePassword(data)
     .then(cb.changePasswordSuccess)

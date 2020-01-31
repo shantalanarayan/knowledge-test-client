@@ -9,7 +9,9 @@ const onCreateTopic = (event) => {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
+  api.createTopic(data)
+    .then(cb.createTopicSuccess)
+    .catch(cb.createTopicFailure)
 }
 
 const onGetTopics = () => {

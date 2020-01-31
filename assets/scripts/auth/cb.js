@@ -3,53 +3,50 @@
 const sharedUi = require('../shared/ui')
 const store = require('../store')
 
-const commonStep = () => {
+const commonStep = (message, isSuccess) => {
   $('form').trigger('reset')
   sharedUi.toggleForm()
+  sharedUi.displayMessage(message, isSuccess)
+  sharedUi.setWelcomeMessage()
 }
 
 const signUpSuccess = function (data) {
-  console.log('signUpSuccess', data)
-  commonStep()
+  console.log('Signup', data)
+  // Set the user returned from the api call to a user variable in our local store.
+  store.user = data.user
+  commonStep('Signed up successfully', true)
 }
 
 const signUpFailure = function (data) {
-  console.log('signUpFailure', data)
-  commonStep()
+  commonStep('Sign up failed', false)
 }
 
 const signInSuccess = function (data) {
   // Set the user returned from the api call to a user variable in our local store.
   store.user = data.user
-  console.log('signInSuccess', data)
-  commonStep()
+  commonStep('Signed in successfully', true)
 }
 
 const signInFailure = function (data) {
-  console.log('signInFailure', data)
-  commonStep()
+  commonStep('Sign in failed', false)
 }
 
 const signOutSuccess = function (data) {
-  console.log('signOutSuccess', data)
-  commonStep()
   // set the user to null as the user has signed out successfully.
   store.user = null
+  commonStep('Signed out successfully', true)
 }
 
 const signOutFailure = function (data) {
-  console.log('signOutFailure', data)
-  commonStep()
+  commonStep('Sign out failed', false)
 }
 
 const changePasswordSuccess = function (data) {
-  console.log('changePasswordSuccess', data)
-  commonStep()
+  commonStep('Password changed successfully', true)
 }
 
 const changePasswordFailure = function (data) {
-  console.log('changePasswordFailure', data)
-  commonStep()
+  commonStep('Change password failed', false)
 }
 
 module.exports = {

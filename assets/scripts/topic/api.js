@@ -13,6 +13,24 @@ const getTopics = () => {
   })
 }
 
+const createTopic = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/topics',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      topic: {
+        title: data.title,
+        question: data.question,
+        answer: data.answer
+      }
+    }
+  })
+}
+
 module.exports = {
-  getTopics
+  getTopics,
+  createTopic
 }
