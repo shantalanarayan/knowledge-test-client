@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Knowledge Test</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Knowledge Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <div class="container"> <!-- start of conatiner -->
-        <nav class="navbar navbar-light bg-info">
-          <a class="navbar-brand" href="#">
-            <img src="public/kt.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            Knowledge Test
-          </a>
-        </nav>
-      </div> <!-- end of container -->
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container">
+
+  <nav class="navbar navbar-light bg-info fixed-top">
+    <a class="navbar-brand" href="#">
+      <img src="public/kt.png" width="60" height="60" class="d-inline-block align-top" alt="">
+      Knowledge Test
+    </a>
+  </nav>
+
+  <!-- start of display message -->
+  <div id="user-welcome" class="text-right col-12 mb-2">Welcome Shantala Narayan!</div>
+  <div id="message" class="alert alert-warning text-left col-12" role="alert">temporary test message</div>
+  <!-- end of display message -->
+</body>
+
 </html>
