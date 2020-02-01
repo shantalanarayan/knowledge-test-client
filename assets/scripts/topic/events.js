@@ -14,12 +14,6 @@ const onCreateTopic = (event) => {
     .catch(cb.createTopicFailure)
 }
 
-const onGetTopics = () => {
-  api.getTopics()
-    .then(cb.getTopicsSuccess)
-    .catch(cb.getTopicsFailure)
-}
-
 const onToggleTopic = () => {
   const targetSection = $(event.target).closest('section')
   const dataId = targetSection.data('id')
@@ -28,7 +22,6 @@ const onToggleTopic = () => {
 
 const addHandlers = () => {
   $('#create-topic').on('submit', onCreateTopic)
-  $('#get-topics').on('click', onGetTopics)
   $('.content').on('click', onToggleTopic)
 }
 

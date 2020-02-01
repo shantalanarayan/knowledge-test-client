@@ -2,19 +2,28 @@
 
 const sharedUi = require('../shared/ui')
 const store = require('../store')
+const topicsApi = require('../topic/api')
+const topicsCb = require('../topic/cb')
 
-const commonStep = (message, isSuccess) => {
+const commonStep = (message, isSuccess, refreshTopics) => {
   $('form').trigger('reset')
   sharedUi.toggleForm()
   sharedUi.displayMessage(message, isSuccess)
   sharedUi.setWelcomeMessage()
+  // For sign-up success and sign-in success refreshTopics would be true.
+  if (refreshTopics) {
+    $('.content').empty()
+    topicsApi.getTopics()
+      .then(topicsCb.getTopicsSuccess)
+      .catch(topicsCb.getTopicsFailure)
+  }
 }
 
 const signUpSuccess = function (data) {
   console.log('Signup', data)
   // Set the user returned from the api call to a user variable in our local store.
   store.user = data.user
-  commonStep('Signed up successfully', true)
+  commonStep('Signed up successfully', true, true)
 }
 
 const signUpFailure = function (data) {
@@ -24,7 +33,7 @@ const signUpFailure = function (data) {
 const signInSuccess = function (data) {
   // Set the user returned from the api call to a user variable in our local store.
   store.user = data.user
-  commonStep('Signed in successfully', true)
+  commonStep('Signed in successfully', true, true)
 }
 
 const signInFailure = function (data) {
