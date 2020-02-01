@@ -1,0 +1,23 @@
+{{#each topics as |topic|}}
+  <section class="col-lg-4 col-md-6" id="{{topic.id}}-question" data-type="question" data-id="{{topic.id}}">
+    <div class="card m-2">
+      <h5 class="card-header">
+        {{topic.title}}
+      </h5>
+      <div class="card-body">
+        <div class="pl-2 question">
+          <h5 class="card-title">Question</h5>
+          <p class="card-text">{{topic.question}}</p>
+        </div>
+        <div class="pl-2 answer" id="{{topic.id}}-answer" data-type="answer" data-id="{{topic.id}}">
+          <h5 class="card-title">Answer</h5>
+          <p class="card-text">{{topic.answer}}</p>
+        </div>
+      </div>
+      <div class="card-footer text-muted">
+        <a href="#" class="btn btn-danger">Delete</a>
+          <a href="#" class="btn btn-info ml-3">Update</a>
+      </div>
+    </div>
+  </section>
+{{/each}}

@@ -3,3 +3,13 @@
 body {
   padding-top: 6em;
 }
+
+.question,
+.answer {
+  height: 150px;
+  overflow: scroll;
+}
+
+.answer {
+  display: none;
+}

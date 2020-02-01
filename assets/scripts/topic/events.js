@@ -20,9 +20,16 @@ const onGetTopics = () => {
     .catch(cb.getTopicsFailure)
 }
 
+const onToggleTopic = () => {
+  const targetSection = $(event.target).closest('section')
+  const dataId = targetSection.data('id')
+  $('#' + dataId + '-answer').slideToggle('slow')
+}
+
 const addHandlers = () => {
   $('#create-topic').on('submit', onCreateTopic)
   $('#get-topics').on('click', onGetTopics)
+  $('.content').on('click', onToggleTopic)
 }
 
 module.exports = {

@@ -1,7 +1,7 @@
 'use strict'
 
 const sharedUi = require('../shared/ui')
-// const store = require('../store')
+const topicsTemplate = require('../templates/topic-listing.handlebars')
 
 const commonStep = (message, isSuccess) => {
   $('form').trigger('reset')
@@ -11,6 +11,8 @@ const commonStep = (message, isSuccess) => {
 const getTopicsSuccess = function (data) {
   console.log('getTopicsSuccess', data)
   commonStep('Topic retrieved successfully', true)
+  const topicsHtml = topicsTemplate({ topics: data.topics })
+  $('.content').html(topicsHtml)
 }
 
 const getTopicsFailure = function (data) {
