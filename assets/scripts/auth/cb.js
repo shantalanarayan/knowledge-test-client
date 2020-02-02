@@ -20,7 +20,6 @@ const commonStep = (message, isSuccess, refreshTopics) => {
 }
 
 const signUpSuccess = function (data) {
-  console.log('Signup', data)
   // Set the user returned from the api call to a user variable in our local store.
   store.user = data.user
   commonStep('Signed up successfully', true, true)
