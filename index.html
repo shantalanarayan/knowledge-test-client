@@ -111,13 +111,13 @@
       <form id="create-topic" class="tab-pane fade" role="tabpanel" aria-labelledby="create-topic-tab">
         <fieldset class="form-group">
           <div class="form-group">
-            <input name="title" type='text' placeholder="Title" class="form-control" />
+            <input id="create-title" name="title" type='text' placeholder="Title" class="form-control" />
           </div>
           <div class="form-group">
-            <input name="question" type='text' placeholder="Enter your question here" class="form-control" />
+            <textarea id="create-question" name="question" class="form-control" placeholder="Enter your question here" rows="3"></textarea>
           </div>
           <div class="form-group">
-            <textarea name="answer" class="form-control" placeholder="Enter your answer here" id="answer" rows="3"></textarea>
+            <textarea id="create-answer" name="answer" class="form-control" placeholder="Enter your answer here" rows="6"></textarea>
           </div>
           <input type='submit' value='Create Topic' class="btn btn-primary" />
         </fieldset>

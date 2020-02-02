@@ -1,6 +1,7 @@
 'use strict'
 
 const topicsTemplate = require('../templates/topic-listing.handlebars')
+const getFormFields = require(`../../../lib/get-form-fields`)
 const sharedUi = require('../shared/ui')
 const api = require('./api')
 
@@ -48,20 +49,36 @@ const onTopicToggle = (event) => {
 }
 
 const onTopicDelete = (event) => {
-  api.deleteTopic(event.target.getAttribute('data-id'))
+  const targetSection = $(event.target).closest('section')
+  const dataId = targetSection.data('id')
+  api.deleteTopic(dataId)
     .then(deleteTopicSuccess)
     .catch(deleteTopicFailure)
 }
 
 const onTopicUpdate = (event) => {
-  console.log('Update clicked for', event.target.getAttribute('data-id'))
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  console.log('topic update', data)
+  const targetSection = $(event.target).closest('section')
+  const dataId = targetSection.data('id')
+  console.log('topic update dataId', dataId)
+}
+
+const onTopicUpdateCancel = (event) => {
+  const targetSection = $(event.target).closest('section')
+  const dataId = targetSection.data('id')
+  $('.' + dataId + '-section').toggle()
 }
 
 const addHandlersForTopics = (topics) => {
   topics.forEach(topic => {
     $('#' + topic.id + '-topic').on('click', onTopicToggle)
     $('#' + topic.id + '-delete').on('click', onTopicDelete)
-    $('#' + topic.id + '-update').on('click', onTopicUpdate)
+    $('#' + topic.id + '-update').on('click', onTopicUpdateCancel)
+    $('#' + topic.id + '-cancel').on('click', onTopicUpdateCancel)
+    $('#' + topic.id + '-edit-topic').on('submit', onTopicUpdate)
   })
 }
 
