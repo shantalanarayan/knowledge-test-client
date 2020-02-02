@@ -1,5 +1,20 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  padding-top: 6em;
+  padding-top: 8em;
+}
+
+.top-section {
+  margin-top: 5em;
+}
+
+.question,
+.answer {
+  height: 150px;
+  overflow: scroll;
+}
+
+.answer,
+.edit-section {
+  display: none;
 }

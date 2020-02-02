@@ -14,15 +14,8 @@ const onCreateTopic = (event) => {
     .catch(cb.createTopicFailure)
 }
 
-const onGetTopics = () => {
-  api.getTopics()
-    .then(cb.getTopicsSuccess)
-    .catch(cb.getTopicsFailure)
-}
-
 const addHandlers = () => {
   $('#create-topic').on('submit', onCreateTopic)
-  $('#get-topics').on('click', onGetTopics)
 }
 
 module.exports = {

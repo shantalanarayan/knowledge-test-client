@@ -30,7 +30,36 @@ const createTopic = (data) => {
   })
 }
 
+const deleteTopic = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/topics/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateTopic = (id, data) => {
+  return $.ajax({
+    url: config.apiUrl + '/topics/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      topic: {
+        title: data.title,
+        question: data.question,
+        answer: data.answer
+      }
+    }
+  })
+}
+
 module.exports = {
   getTopics,
-  createTopic
+  createTopic,
+  deleteTopic,
+  updateTopic
 }

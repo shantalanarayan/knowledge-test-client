@@ -1,0 +1,55 @@
+<!-- For each topic, both read and edit section has same class topicId-section
+Read section is visible by default and edit section is hidden.
+On update button click of read section, we call toggle on class topicId-section
+Similarly on cancel button click on edit section, we call toggle on class topicId-section -->
+
+{{#each topics as |topic|}}
+  <!-- Add read section with form for each topic -->
+  <section class="{{topic.id}}-section col-lg-4 col-md-6" data-id="{{topic.id}}">
+    <div class="card m-2">
+      <h5 class="card-header">
+        {{topic.title}}
+      </h5>
+      <div id="{{topic.id}}-topic" class="card-body">
+        <div class="pl-2 question">
+          <h5 class="card-title">Question</h5>
+          <p class="card-text">{{topic.question}}</p>
+        </div>
+        <div class="pl-2 answer" id="{{topic.id}}-answer">
+          <h5 class="card-title">Answer</h5>
+          <p class="card-text">{{topic.answer}}</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        {{> partial topic=topic}}
+      </div>
+    </div>
+  </section>
+
+  <!-- Add edit section with form for each topic -->
+  <section class="{{topic.id}}-section edit-section col-lg-4 col-md-6" data-id="{{topic.id}}">
+    <form id="{{topic.id}}-edit-topic">
+      <div class="card m-2">
+        <h5 class="card-header">
+          <div class="form-group">
+            <input name="title" type='text' value="{{topic.title}}" class="form-control" />
+          </div>
+        </h5>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="{{topic.id}}-question">Question</label>
+            <textarea name="question" id="{{topic.id}}-question" class="form-control" rows="3">{{topic.question}}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="{{topic.id}}-answer">Answer</label>
+            <textarea name="answer" id="{{topic.id}}-answer" class="form-control" rows="6">{{topic.answer}}</textarea>
+          </div>
+        </div>
+        <div class="card-footer">
+          <input type='submit' value='Save' class="btn btn-primary" />
+          <button id="{{topic.id}}-cancel" type='button' class="btn btn-secondary float-right">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </section>
+{{/each}}
