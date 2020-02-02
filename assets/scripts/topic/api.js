@@ -40,8 +40,26 @@ const deleteTopic = (id) => {
   })
 }
 
+const updateTopic = (id, data) => {
+  return $.ajax({
+    url: config.apiUrl + '/topics/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      topic: {
+        title: data.title,
+        question: data.question,
+        answer: data.answer
+      }
+    }
+  })
+}
+
 module.exports = {
   getTopics,
   createTopic,
-  deleteTopic
+  deleteTopic,
+  updateTopic
 }

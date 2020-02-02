@@ -42,6 +42,17 @@ const deleteTopicFailure = () => {
   commonStep('Topic deletion failed', false)
 }
 
+const updateTopicSuccess = () => {
+  commonStep('Topic updated successfully', true)
+  api.getTopics()
+    .then(getTopicsSuccess)
+    .catch(getTopicsFailure)
+}
+
+const updateTopicFailure = () => {
+  commonStep('Topic update failed', false)
+}
+
 const onTopicToggle = (event) => {
   const targetSection = $(event.target).closest('section')
   const dataId = targetSection.data('id')
@@ -58,12 +69,16 @@ const onTopicDelete = (event) => {
 
 const onTopicUpdate = (event) => {
   event.preventDefault()
+  // Get form data to update
   const form = event.target
   const data = getFormFields(form)
-  console.log('topic update', data)
+
+  // Get topic id to update
   const targetSection = $(event.target).closest('section')
   const dataId = targetSection.data('id')
-  console.log('topic update dataId', dataId)
+  api.updateTopic(dataId, data)
+    .then(updateTopicSuccess)
+    .catch(updateTopicFailure)
 }
 
 const onTopicUpdateCancel = (event) => {
