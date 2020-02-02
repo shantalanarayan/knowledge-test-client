@@ -1,6 +1,7 @@
 'use strict'
 
 const topicsTemplate = require('../templates/topic-listing.handlebars')
+const noTopicsTemplate = require('../templates/no-topics.handlebars')
 const getFormFields = require(`../../../lib/get-form-fields`)
 const sharedUi = require('../shared/ui')
 const api = require('./api')
@@ -11,9 +12,13 @@ const commonStep = (message, isSuccess) => {
 }
 
 const getTopicsSuccess = function (data) {
-  const topicsHtml = topicsTemplate({ topics: data.topics })
-  $('.content').html(topicsHtml)
-  addHandlersForTopics(data.topics)
+  if (data.topics.length > 0) {
+    const topicsHtml = topicsTemplate({ topics: data.topics })
+    $('.content').html(topicsHtml)
+    addHandlersForTopics(data.topics)
+  } else {
+    $('.content').html(noTopicsTemplate())
+  }
 }
 
 const getTopicsFailure = function (data) {
