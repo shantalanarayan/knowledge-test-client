@@ -37,8 +37,14 @@ const setWelcomeMessage = () => {
   }
 }
 
+const resetTabs = () => {
+  $('#sign-in-tab').tab('show')
+  $('#study-tab').tab('show')
+}
+
 module.exports = {
   toggleForm,
   displayMessage,
-  setWelcomeMessage
+  setWelcomeMessage,
+  resetTabs
 }

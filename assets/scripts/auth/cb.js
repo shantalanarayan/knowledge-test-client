@@ -23,6 +23,7 @@ const signUpSuccess = function (data) {
   // Set the user returned from the api call to a user variable in our local store.
   store.user = data.user
   commonStep('Signed up successfully', true, true)
+  sharedUi.resetTabs()
 }
 
 const signUpFailure = function (data) {
@@ -33,6 +34,7 @@ const signInSuccess = function (data) {
   // Set the user returned from the api call to a user variable in our local store.
   store.user = data.user
   commonStep('Signed in successfully', true, true)
+  sharedUi.resetTabs()
 }
 
 const signInFailure = function (data) {
@@ -43,6 +45,7 @@ const signOutSuccess = function (data) {
   // set the user to null as the user has signed out successfully.
   store.user = null
   commonStep('Signed out successfully', true)
+  sharedUi.resetTabs()
 }
 
 const signOutFailure = function (data) {
