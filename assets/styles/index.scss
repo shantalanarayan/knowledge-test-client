@@ -1,8 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+$tab-color: #5bc0de;
+$tab-text: white;
 
 body {
   padding-top: 8em;
+  background-image: url('public/bg-img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .navbar-brand {
@@ -25,7 +30,18 @@ body {
   display: none;
 }
 
+.nav-link {
+  background-color: $tab-color;
+  color: $tab-text;
+}
+
+.nav-tabs > li > a, .nav-pills > li > a {margin:1px;}
+
 @media only screen and (max-width: 600px) {
+  body {
+    background-repeat: repeat-y;
+  }
+
   .navbar-brand {
     font-size: 20px;
   }

@@ -20,19 +20,26 @@
       <img src="public/kt.png" width="60" height="60" class="d-inline-block align-top" alt="">
       Knowledge Test
     </a>
+
+    <!-- start of user welcome text -->
+    <div id="user-welcome" class="font-weight-bold text-warning float-right"></div>
+    <!-- end of user welcome text -->
+
+    <!-- start of sign-out -->
+    <input id="sign-out" type="submit" value="Sign out!" class="btn btn-primary float-right" />
+    <!-- end of sign-out -->
   </nav>
   <!-- end of navbar -->
 
   <!-- start of user welcome text and display message -->
-  <div id="message" class="alert text-left col-12 fixed-top top-section" role="alert"></div>
-  <div id="user-welcome" class="font-weight-bold text-success text-right col-12 mb-2"></div>
+  <div id="message" class="alert text-left col-12 fixed-bottom top-section" role="alert"></div>
   <!-- end of user welcome text and display message -->
 
   <!-- start of non-authenticated-area -->
   <div id="non-auth-area">
 
     <!-- start of sign-in and sign-up link -->
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <ul class="nav nav-tabs mt-2" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="sign-in-tab" data-toggle="tab" href="#sign-in" role="tab" aria-controls="sign-in" aria-selected="true">Sign In</a>
       </li>
@@ -81,12 +88,8 @@
 
   <!-- Start of authenticated-area -->
   <div id="auth-area">
-    <!-- start of sign-out -->
-      <input id="sign-out" type="submit" value="Sign out!" class="btn btn-primary float-right" />
-    <!-- end of sign-out -->
-
     <!-- start of study, create-topic, and change-password link -->
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <ul class="nav nav-tabs m-2" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="study-tab" data-toggle="tab" href="#study" role="tab" aria-controls="study" aria-selected="true">Study</a>
       </li>
