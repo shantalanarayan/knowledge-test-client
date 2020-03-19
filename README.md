@@ -7,6 +7,32 @@ Client application for user to register and create their own sets of question an
 * [Knowledge test api url](https://sn-knowledge-test.herokuapp.com/examples)
 * [Knowledge test api repo](https://github.com/shantalanarayan/knowledge-test-api)
 
+## User stories
+![User stories](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/kt_user_stories.jpeg)
+
+## Wireframes
+### Sign-in
+![Sign-in wireframe](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Sign%20in%20form.png)
+
+### Sign-up
+![Sign-up wireframe](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Sign%20up%20form.png)
+
+### Change-password
+![Change password](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Change%20password.png)
+
+### Study cards - answer not visibile
+![Study cards - answer not visibile](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Study%20cards%20-%20read%20mode%20-%20answer%20hidden.png)
+
+### Study cards - answer visibile
+![Study cards - answer visibile](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Study%20cards%20-%20read%20mode%20-%20answer%20visible.png)
+
+### Study cards - update
+![Study cards - update](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Study%20cards%20-%20edit%20mode.png)
+
+### Add study card
+![Add study card](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Add%20study%20card.png)
+
+
 ## Technologies Used
 * Html
 * CSS
@@ -53,28 +79,3 @@ Client application for user to register and create their own sets of question an
      - Edit section has its counterpart cancel button with id **{topic-id}-Cancel**
      - Both update and cancel button implements the **same handler callback function** for click event
      - In that function I just toggle visibility of element with class  `{topicId}-section` - to toggle between read and edit card’s visibility. Thus, for a given topic-id, when read is visible, edit is hidden. When edit is visible, read is hidden.
-
-## User stories
-![User stories](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/kt_user_stories.jpeg)
-
-## Wireframes
-### Sign-in
-![Sign-in wireframe](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Sign%20in%20form.png)
-
-### Sign-up
-![Sign-up wireframe](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Sign%20up%20form.png)
-
-### Change-password
-![Change password](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Change%20password.png)
-
-### Study cards - answer not visibile
-![Study cards - answer not visibile](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Study%20cards%20-%20read%20mode%20-%20answer%20hidden.png)
-
-### Study cards - answer visibile
-![Study cards - answer visibile](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Study%20cards%20-%20read%20mode%20-%20answer%20visible.png)
-
-### Study cards - update
-![Study cards - update](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Study%20cards%20-%20edit%20mode.png)
-
-### Add study card
-![Add study card](https://github.com/shantalanarayan/knowledge-test-client/blob/KTClient/docs/Knowledge%20Test%20-%20Add%20study%20card.png)
