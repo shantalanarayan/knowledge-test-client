@@ -7,7 +7,7 @@ body {
   padding-top: 8em;
   background-image: url('public/bg-img.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 800px;
 }
 
 .navbar-brand {
@@ -38,10 +38,6 @@ body {
 .nav-tabs > li > a, .nav-pills > li > a {margin:1px;}
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-repeat: repeat-y;
-  }
-
   .navbar-brand {
     font-size: 20px;
   }
