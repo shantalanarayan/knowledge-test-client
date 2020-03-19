@@ -6,10 +6,12 @@ const toggleForm = () => {
   if (store.user) {
     // User is logged in
     $('#auth-area').show()
+    $('#sign-out').show()
     $('#non-auth-area').hide()
   } else {
     // User is logged out
     $('#auth-area').hide()
+    $('#sign-out').hide()
     $('#non-auth-area').show()
   }
 }
@@ -30,7 +32,7 @@ const displayMessage = (message, isSuccess) => {
 const setWelcomeMessage = () => {
   if (store.user) {
     // User is logged in. Hence, set welcome message
-    $('#user-welcome').text('Welcome ' + store.user.email)
+    $('#user-welcome').text('Hello ' + store.user.email + '!')
   } else {
     // User is logged out. Hence, clear welcome message
     $('#user-welcome').empty()
