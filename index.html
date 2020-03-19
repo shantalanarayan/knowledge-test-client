@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Knowledge Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container">
+  <!-- start of navbar -->
+  <nav class="navbar navbar-light bg-info fixed-top">
+    <a class="navbar-brand" href="#">
+      <img src="public/kt.png" width="60" height="60" class="d-inline-block align-top" alt="">
+      Knowledge Test
+    </a>
+
+    <!-- start of user welcome text -->
+    <div id="user-welcome" class="font-weight-bold text-warning float-right"></div>
+    <!-- end of user welcome text -->
+
+    <!-- start of sign-out -->
+    <input id="sign-out" type="submit" value="Sign out!" class="btn btn-primary float-right" />
+    <!-- end of sign-out -->
+  </nav>
+  <!-- end of navbar -->
+
+  <!-- start of user welcome text and display message -->
+  <div id="message" class="alert text-left col-12 fixed-bottom top-section" role="alert"></div>
+  <!-- end of user welcome text and display message -->
+
+  <!-- start of non-authenticated-area -->
+  <div id="non-auth-area">
+
+    <!-- start of sign-in and sign-up link -->
+    <ul class="nav nav-tabs mt-2" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="sign-in-tab" data-toggle="tab" href="#sign-in" role="tab" aria-controls="sign-in" aria-selected="true">Sign In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="sign-up-tab" data-toggle="tab" href="#sign-up" role="tab" aria-controls="sign-up" aria-selected="false">Sign Up</a>
+      </li>
+    </ul>
+    <!-- end of sign-in and sign-up link -->
+
+    <!-- start of sign-in and sign-up content -->
+    <div class="tab-content mt-5" id="myTabContent">
+      <!-- start of sign-in content -->
+      <form id='sign-in' class="tab-pane fade show active" role="tabpanel" aria-labelledby="sign-in-tab">
+        <fieldset class="form-group col-md-6">
+          <div class="form-group">
+            <input name="credentials[email]" type='email' placeholder="Email" class="form-control" />
+          </div>
+          <div class="form-group">
+            <input name="credentials[password]" type='password' placeholder="Password" class="form-control" />
+          </div>
+          <input type='submit' value='Sign In' class="btn btn-primary" />
+        </fieldset>
+      </form>
+      <!-- end of sign-in content -->
+
+      <!-- start of sign-up content -->
+      <form id="sign-up" class="tab-pane fade" role="tabpanel" aria-labelledby="sign-up-tab">
+        <fieldset class="form-group col-md-6">
+          <div class="form-group md-6">
+            <input name="credentials[email]" type='email' placeholder="Email" class="form-control" />
+          </div>
+          <div class="form-group">
+            <input name="credentials[password]" type='password' placeholder="Password" class="form-control" />
+          </div>
+          <div class="form-group">
+            <input name="credentials[password_confirmation]" type='password' placeholder="Password Confirmation" class="form-control" />
+          </div>
+          <input type='submit' value='Sign Up' class="btn btn-primary" />
+        </fieldset>
+      </form>
+      <!-- end of sign-up content -->
+    </div>
+    <!-- end of sign-in and sign-up content -->
+  </div>
+  <!-- end of non-authenticated-area -->
+
+  <!-- Start of authenticated-area -->
+  <div id="auth-area">
+    <!-- start of study, create-topic, and change-password link -->
+    <ul class="nav nav-tabs m-2" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="study-tab" data-toggle="tab" href="#study" role="tab" aria-controls="study" aria-selected="true">Study</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="create-topic-tab" data-toggle="tab" href="#create-topic" role="tab" aria-controls="create-topic" aria-selected="false">Add study card</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="change-password-tab" data-toggle="tab" href="#change-password" role="tab" aria-controls="change-password" aria-selected="false">Change password</a>
+      </li>
+    </ul>
+    <!-- end of study, create-topic, and change-password link -->
+
+    <!-- start of study, create-topic, and change-password content -->
+    <div class="tab-content mt-5" id="myTabContent">
+      <!-- start of study content -->
+      <div class="tab-pane fade show active" id="study" role="tabpanel" aria-labelledby="study-tab">
+        <div class="content d-flex flex-wrap"></div>
+      </div>
+      <!-- end of study content -->
+
+      <!-- start of create-topic content -->
+      <form id="create-topic" class="tab-pane fade" role="tabpanel" aria-labelledby="create-topic-tab">
+        <fieldset class="form-group">
+          <div class="form-group">
+            <input id="create-title" name="title" type='text' placeholder="Title" class="form-control" />
+          </div>
+          <div class="form-group">
+            <textarea id="create-question" name="question" class="form-control" placeholder="Enter your question here" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <textarea id="create-answer" name="answer" class="form-control" placeholder="Enter your answer here" rows="6"></textarea>
+          </div>
+          <input type='submit' value='Create Topic' class="btn btn-primary" />
+        </fieldset>
+      </form>
+      <!-- end of create-topic content -->
+
+      <!-- start of change-password content -->
+      <form id="change-password" class="tab-pane fade" role="tabpanel" aria-labelledby="change-password-tab">
+        <fieldset class="form-group col-md-6">
+          <div class="form-group">
+            <input name="passwords[old]" type='password' placeholder="Old Password" class="form-control" />
+          </div>
+          <div class="form-group">
+            <input name="passwords[new]" type='password' placeholder="New Password" class="form-control" />
+          </div>
+          <input type='submit' value='Change Password!' class="btn btn-primary" />
+        </fieldset>
+      </form>
+      <!-- end of change-password content -->
+    </div>
+    <!-- end of study, create-topic, and change-password content -->
+  </div>
+  <!-- end of authenticated-area -->
+</body>
+
+</html>
